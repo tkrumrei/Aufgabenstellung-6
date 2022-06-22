@@ -7,12 +7,14 @@ const client = new MongoClient(url) // mongodb client
 const dbName = 'mydatabase' // database name
 const collectionName = 'newpois' // collection name
 
+var finalString = "";
+
 /* GET delete page. */
 router.get('/', function(req, res, next) 
 {
-  res.render('delete', { title: 'Delete Page' });
-
   getPOIs(client, dbName, collectionName, req)
+  res.render('delete', { title: 'Delete Page',elements: finalString });
+
 });
 
 async function getPOIs(client, dbName, collectionName, req) {
@@ -27,11 +29,11 @@ async function getPOIs(client, dbName, collectionName, req) {
   const cursor =  collection.find({})
    
   const results = await cursor.toArray()
-  var finalString = "";
+  
   for(var i = 0; i < results.length; i++) {
-    finalString = finalString + " " + results[i].poiname + " " + results[i].coordinates + "br" 
+    finalString = finalString + " " + results[i].poiname + " " + results[i].coordinates + "          "
   }
-  req.body.elements = finalString
+  
 
   console.log(finalString);
   //collection.deleteOne(poi) // see https://www.mongodb.com/docs/drivers/node/current/usage-examples/insertOne/
