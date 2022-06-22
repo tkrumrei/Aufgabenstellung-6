@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  header
+    // add a bootstrap navbar
+    // Documentation about navbars at https://getbootstrap.com/docs/5.2/components/navbar/
+  nav#myfirstnavbar.navbar.navbar-expand-md.navbar-dark.bg-primary.mb-4
+      .container-fluid
+        a.navbar-brand(href='#')= title
+        i.bi.bi-camera.me-3
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+  
+  .container
+    .row 
+      .col.justify-content-md-center
+        form(action="/delete/deletedPoi" method="post")
+          fieldset 
+            label.col-sm-2.col-form-label(for="poiname") Enter POI Name to delete
+              .col-sm-6
+                input(type="text" name="pname" placeholder="Enter POI Name")
+            br
+            button.btn.btn-primary.mb-2(type="delete") Delete 
+        br
+        br
+        p Type /home to get to the Homepage again 
+        p Type /search to display the created POIs 
+        p Type /add to add new elements to the databank 
+      .col 
+        p(name="elements") 
+
+
+block foot 
+  footer
+  .navbar.navbar-expand-md.fixed-bottom.bg-primary.justify-content-center
+    span.text-white Assignment 6 by Tim Lehmann & Tobias Krumrein
