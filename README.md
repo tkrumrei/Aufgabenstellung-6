@@ -7,3 +7,4 @@ When you go to "localhost:3000/search you can see all the points you current hav
 When you go to "localhost:3000/add you can add data to your databank. If done successful you will pass onto the page "localhost:3000/add_notification". On this page there you can see the data you have added.
 When you go to "localhost:3000/delete its the same like add but here you can delete the point by searching the name in the textfield and when done successful  you will pass onto the page "localhost:3000/delete_notification". 
 ----------------------------------------------------------------------------------------------------------------------------------------------
+asdf
